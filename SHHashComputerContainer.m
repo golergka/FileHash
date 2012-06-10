@@ -7,7 +7,9 @@
 //
 
 #import "SHHashComputerContainer.h"
+
 #import "SHHashComputer.h"
+#import "SHMD5Computer.h"
 
 @implementation SHHashComputerContainer
 
@@ -17,9 +19,10 @@
 {
     self = [super init];
     if (self) {
-        hashComputers = [NSMutableSet setWithCapacity:1];
-        // adding one unimplemented computer as an example
-        [hashComputers addObject:[[SHHashComputer alloc] init]]; 
+        hashComputers = [NSMutableSet setWithCapacity:2];
+
+        [hashComputers addObject:[[SHHashComputer alloc] init]];
+        [hashComputers addObject:[[SHMD5Computer alloc] init]];
     }
     return self;
 }

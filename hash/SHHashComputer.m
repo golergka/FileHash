@@ -11,19 +11,18 @@
 NSString * const gotFilePathNotification = @"gotFilePath";
 NSString * const gotResultNotification = @"gotResultOfType";
 
-@implementation SHHashComputer {
-    NSString *_hashType;
-}
+static NSOperationQueue *_operationQueue;
+
+@implementation SHHashComputer
 
 @synthesize path,operation;
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        _hashType = @"Unimplemented";
-    }
-    return self;
++ (NSOperationQueue*)operationQueue {
+    
+    if(_operationQueue == nil)
+        _operationQueue = [NSOperationQueue new];
+    return _operationQueue;
+    
 }
 
 - (void)gotPath:(NSURL*)newPath {
@@ -38,14 +37,16 @@ NSString * const gotResultNotification = @"gotResultOfType";
                                          selector:@selector(computeAndSendHash)
                                            object:nil];
     
-    [[NSOperationQueue mainQueue] addOperation:newOperation];
+    [[SHHashComputer operationQueue] addOperation:newOperation];
     self.operation = newOperation;
     
         
 }
 
+// that's where actual computation will take place in children
 - (NSString*)computeHash {
-    
+
+    [NSThread sleepForTimeInterval:3];
     return [NSString stringWithFormat:@"unimplemented hash for file %@", self.path];
 }
 
@@ -54,15 +55,16 @@ NSString * const gotResultNotification = @"gotResultOfType";
     NSString *result = [self computeHash];
     NSString *notificationName = [NSString stringWithFormat:@"%@%@",
                                   gotResultNotification,
-                                  _hashType];
+                                  self.hashType];
     [[NSNotificationCenter defaultCenter] postNotificationName:notificationName
                                                         object:result];
     self.operation = nil;
     
 }
 
+// override in children with correct type like @"MD5" or @"SHA-1"
 - (NSString*)hashType {
-    return _hashType;
+    return @"unimplemented";
 }
 
 @end

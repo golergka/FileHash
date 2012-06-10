@@ -16,6 +16,8 @@ extern NSString * const gotResultNotification;
 @property (copy) NSURL *path;
 @property (weak) NSOperation *operation;
 
++ (NSOperationQueue*)operationQueue;
+
 - (NSString*)hashType;
 - (void)gotPath:(NSURL*)newPath;
 

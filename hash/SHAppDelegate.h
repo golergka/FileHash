@@ -15,7 +15,7 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (weak) IBOutlet NSView *resultView;
+@property (weak) IBOutlet NSView *resultsView;
 
 @property (weak) IBOutlet NSTextField *fileName;
 @property (weak) IBOutlet NSTextField *fileSize;

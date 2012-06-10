@@ -23,7 +23,7 @@
 - (id)initWithHashType:(NSString*)hashType;
 
 - (void)setHashType:(NSString*)hashType;
-- (void)gotPath:(NSNotification*)newPathNotification;
+- (void)gotPath;
 - (void)gotResult:(NSNotification*)newResultNotification;
 
 @end

@@ -29,11 +29,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self loadView];
-        // subscribe to notification about new path
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(gotPath:)
-                                                     name:gotFilePathNotification
-                                                   object:nil];
+        
         [self.progressIndicator setHidden:YES];
         [self.clipboardButton setEnabled:NO];
     }
@@ -66,7 +62,7 @@
                                                object:nil];
 }
 
-- (void)gotPath:(NSNotification *)newPathNotification {
+- (void)gotPath {
     
     [self.textField setStringValue:@""];
     [self.progressIndicator startAnimation:self];
