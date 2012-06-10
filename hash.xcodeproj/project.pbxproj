@@ -13,6 +13,14 @@
 		F1A73BDD1581EAA2002A4FFB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F1A73BDB1581EAA2002A4FFB /* Credits.rtf */; };
 		F1A73BE01581EAA2002A4FFB /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A73BDF1581EAA2002A4FFB /* SHAppDelegate.m */; };
 		F1A73BE31581EAA2002A4FFB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A73BE11581EAA2002A4FFB /* MainMenu.xib */; };
+		F1A73BF41582AA7D002A4FFB /* SHHashComputer.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A73BF31582AA7D002A4FFB /* SHHashComputer.m */; };
+		F1A73BF81582B3A7002A4FFB /* SHHashResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A73BF61582B3A6002A4FFB /* SHHashResultViewController.m */; };
+		F1A73BF91582B3A7002A4FFB /* SHHashResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A73BF71582B3A6002A4FFB /* SHHashResultView.xib */; };
+		F1A73C1315840CE3002A4FFB /* SHHashComputerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A73C1215840CE3002A4FFB /* SHHashComputerContainer.m */; };
+		F1A73C1915841E8A002A4FFB /* NSImage+QuickLook.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A73C1615841E8A002A4FFB /* NSImage+QuickLook.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F1A73C1A15841E8A002A4FFB /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F1A73C1715841E8A002A4FFB /* README.rtf */; };
+		F1A73C1B15841E8A002A4FFB /* Source Code License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F1A73C1815841E8A002A4FFB /* Source Code License.rtf */; };
+		F1A73C1D1584241A002A4FFB /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A73C1C1584241A002A4FFB /* QuickLook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +29,26 @@
 		F1A73BCF1581EAA2002A4FFB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		F1A73BD01581EAA2002A4FFB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F1A73BD11581EAA2002A4FFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		F1A73BD41581EAA2002A4FFB /* hash-Info.plist */ = {isa = PBXFileReference; path = "hash-Info.plist"; sourceTree = "<group>"; };
+		F1A73BD41581EAA2002A4FFB /* hash-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hash-Info.plist"; sourceTree = "<group>"; };
 		F1A73BD61581EAA2002A4FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F1A73BD81581EAA2002A4FFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F1A73BDA1581EAA2002A4FFB /* hash-Prefix.pch */ = {isa = PBXFileReference; path = "hash-Prefix.pch"; sourceTree = "<group>"; };
+		F1A73BDA1581EAA2002A4FFB /* hash-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hash-Prefix.pch"; sourceTree = "<group>"; };
 		F1A73BDC1581EAA2002A4FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		F1A73BDE1581EAA2002A4FFB /* SHAppDelegate.h */ = {isa = PBXFileReference; path = SHAppDelegate.h; sourceTree = "<group>"; };
+		F1A73BDE1581EAA2002A4FFB /* SHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
 		F1A73BDF1581EAA2002A4FFB /* SHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
 		F1A73BE21581EAA2002A4FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F1A73BF21582AA7D002A4FFB /* SHHashComputer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHHashComputer.h; path = hash/SHHashComputer.h; sourceTree = "<group>"; };
+		F1A73BF31582AA7D002A4FFB /* SHHashComputer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHHashComputer.m; path = hash/SHHashComputer.m; sourceTree = "<group>"; };
+		F1A73BF51582B3A6002A4FFB /* SHHashResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHashResultViewController.h; sourceTree = "<group>"; };
+		F1A73BF61582B3A6002A4FFB /* SHHashResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHashResultViewController.m; sourceTree = "<group>"; };
+		F1A73BF71582B3A6002A4FFB /* SHHashResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SHHashResultView.xib; path = ../SHHashResultView.xib; sourceTree = "<group>"; };
+		F1A73C1115840CE3002A4FFB /* SHHashComputerContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHashComputerContainer.h; sourceTree = "<group>"; };
+		F1A73C1215840CE3002A4FFB /* SHHashComputerContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHHashComputerContainer.m; sourceTree = "<group>"; };
+		F1A73C1515841E8A002A4FFB /* NSImage+QuickLook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+QuickLook.h"; sourceTree = "<group>"; };
+		F1A73C1615841E8A002A4FFB /* NSImage+QuickLook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+QuickLook.m"; sourceTree = "<group>"; };
+		F1A73C1715841E8A002A4FFB /* README.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		F1A73C1815841E8A002A4FFB /* Source Code License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "Source Code License.rtf"; sourceTree = "<group>"; };
+		F1A73C1C1584241A002A4FFB /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A73C1D1584241A002A4FFB /* QuickLook.framework in Frameworks */,
 				F1A73BCD1581EAA2002A4FFB /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,7 +67,10 @@
 		F1A73BBD1581EAA2002A4FFB = {
 			isa = PBXGroup;
 			children = (
-				F1A73BD21581EAA2002A4FFB /* hash */,
+				F1A73BFA1582B3AE002A4FFB /* Controller */,
+				F1A73BF115829CC0002A4FFB /* Model */,
+				F1A73BF015829CA1002A4FFB /* View */,
+				F1A73BEF15829C81002A4FFB /* Resources */,
 				F1A73BCB1581EAA2002A4FFB /* Frameworks */,
 				F1A73BC91581EAA2002A4FFB /* Products */,
 			);
@@ -63,6 +87,7 @@
 		F1A73BCB1581EAA2002A4FFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1A73C1415841E8A002A4FFB /* NSImageQuickLook */,
 				F1A73BCC1581EAA2002A4FFB /* Cocoa.framework */,
 				F1A73BCE1581EAA2002A4FFB /* Other Frameworks */,
 			);
@@ -72,22 +97,12 @@
 		F1A73BCE1581EAA2002A4FFB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1A73C1C1584241A002A4FFB /* QuickLook.framework */,
 				F1A73BCF1581EAA2002A4FFB /* AppKit.framework */,
 				F1A73BD01581EAA2002A4FFB /* CoreData.framework */,
 				F1A73BD11581EAA2002A4FFB /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		F1A73BD21581EAA2002A4FFB /* hash */ = {
-			isa = PBXGroup;
-			children = (
-				F1A73BDE1581EAA2002A4FFB /* SHAppDelegate.h */,
-				F1A73BDF1581EAA2002A4FFB /* SHAppDelegate.m */,
-				F1A73BE11581EAA2002A4FFB /* MainMenu.xib */,
-				F1A73BD31581EAA2002A4FFB /* Supporting Files */,
-			);
-			path = hash;
 			sourceTree = "<group>";
 		};
 		F1A73BD31581EAA2002A4FFB /* Supporting Files */ = {
@@ -100,6 +115,59 @@
 				F1A73BDB1581EAA2002A4FFB /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1A73BEF15829C81002A4FFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1A73BF71582B3A6002A4FFB /* SHHashResultView.xib */,
+				F1A73BE11581EAA2002A4FFB /* MainMenu.xib */,
+				F1A73BD31581EAA2002A4FFB /* Supporting Files */,
+			);
+			name = Resources;
+			path = hash;
+			sourceTree = "<group>";
+		};
+		F1A73BF015829CA1002A4FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1A73BDE1581EAA2002A4FFB /* SHAppDelegate.h */,
+				F1A73BDF1581EAA2002A4FFB /* SHAppDelegate.m */,
+			);
+			name = View;
+			path = hash;
+			sourceTree = "<group>";
+		};
+		F1A73BF115829CC0002A4FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1A73BF21582AA7D002A4FFB /* SHHashComputer.h */,
+				F1A73BF31582AA7D002A4FFB /* SHHashComputer.m */,
+				F1A73C1115840CE3002A4FFB /* SHHashComputerContainer.h */,
+				F1A73C1215840CE3002A4FFB /* SHHashComputerContainer.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F1A73BFA1582B3AE002A4FFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F1A73BF51582B3A6002A4FFB /* SHHashResultViewController.h */,
+				F1A73BF61582B3A6002A4FFB /* SHHashResultViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F1A73C1415841E8A002A4FFB /* NSImageQuickLook */ = {
+			isa = PBXGroup;
+			children = (
+				F1A73C1515841E8A002A4FFB /* NSImage+QuickLook.h */,
+				F1A73C1615841E8A002A4FFB /* NSImage+QuickLook.m */,
+				F1A73C1715841E8A002A4FFB /* README.rtf */,
+				F1A73C1815841E8A002A4FFB /* Source Code License.rtf */,
+			);
+			name = NSImageQuickLook;
+			path = hash/NSImageQuickLook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +225,9 @@
 				F1A73BD71581EAA2002A4FFB /* InfoPlist.strings in Resources */,
 				F1A73BDD1581EAA2002A4FFB /* Credits.rtf in Resources */,
 				F1A73BE31581EAA2002A4FFB /* MainMenu.xib in Resources */,
+				F1A73BF91582B3A7002A4FFB /* SHHashResultView.xib in Resources */,
+				F1A73C1A15841E8A002A4FFB /* README.rtf in Resources */,
+				F1A73C1B15841E8A002A4FFB /* Source Code License.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +240,10 @@
 			files = (
 				F1A73BD91581EAA2002A4FFB /* main.m in Sources */,
 				F1A73BE01581EAA2002A4FFB /* SHAppDelegate.m in Sources */,
+				F1A73BF41582AA7D002A4FFB /* SHHashComputer.m in Sources */,
+				F1A73BF81582B3A7002A4FFB /* SHHashResultViewController.m in Sources */,
+				F1A73C1315840CE3002A4FFB /* SHHashComputerContainer.m in Sources */,
+				F1A73C1915841E8A002A4FFB /* NSImage+QuickLook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

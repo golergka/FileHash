@@ -8,8 +8,23 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SHAppDelegate : NSObject <NSApplicationDelegate>
+@class SHHashComputerContainer;
+
+@interface SHAppDelegate : NSObject <NSApplicationDelegate> {
+    SHHashComputerContainer *computerContainer;
+}
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSView *resultView;
+
+@property (weak) IBOutlet NSTextField *fileName;
+@property (weak) IBOutlet NSTextField *fileSize;
+@property (weak) IBOutlet NSTextField *filePath;
+@property (weak) IBOutlet NSTextField *fileModified;
+@property (weak) IBOutlet NSImageView *fileIcon;
+
+@property (strong) NSMutableSet *resultViewControllers;
+
+- (IBAction)openFileButtonAction:(id)sender;
 
 @end
