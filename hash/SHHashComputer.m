@@ -15,7 +15,7 @@ static NSOperationQueue *_operationQueue;
 
 @implementation SHHashComputer
 
-@synthesize path,operation;
+@synthesize path,operation,result;
 
 + (NSOperationQueue*)operationQueue {
     
@@ -45,19 +45,21 @@ static NSOperationQueue *_operationQueue;
 
 // that's where actual computation will take place in children
 - (NSString*)computeHash {
-
+    
     [NSThread sleepForTimeInterval:3];
     return [NSString stringWithFormat:@"unimplemented hash for file %@", self.path];
 }
 
 - (void)computeAndSendHash {
     
-    NSString *result = [self computeHash];
+    self.result = [self computeHash];
+    
     NSString *notificationName = [NSString stringWithFormat:@"%@%@",
                                   gotResultNotification,
                                   self.hashType];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:notificationName
-                                                        object:result];
+                                                        object:self];
     self.operation = nil;
     
 }

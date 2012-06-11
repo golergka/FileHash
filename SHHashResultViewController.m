@@ -73,16 +73,16 @@
 
 - (void)gotResult:(NSNotification *)newResultNotification {
     
-    id newResult = [newResultNotification object];
+    id computer = [newResultNotification object];
     
-    if (newResult == nil)
+    if (computer == nil)
         [NSException raise:@"No object"
                     format:@"Expected object with notification!"];
-    else if (![newResult isKindOfClass:[NSString class]])
-        [NSException raise:@"Not NSString"
-                    format:@"Expected NSString object!"];
+    else if (![computer isKindOfClass:[SHHashComputer class]])
+        [NSException raise:@"Not SHHashComputer"
+                    format:@"Expected SHHashComputer object!"];
     else
-        self.result = (NSString*) newResult;
+        self.result = [((SHHashComputer*) computer) result];
     
     [self.textField setStringValue:self.result];
     [self.progressIndicator stopAnimation:self];

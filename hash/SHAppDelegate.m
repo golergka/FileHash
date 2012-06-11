@@ -132,6 +132,10 @@ static const int resultViewVerticalIndentation = 5;
     dialog.allowsMultipleSelection = NO;
     
     if ([dialog runModal] == NSFileHandlingPanelOKButton) {
+        
+        // send gotPath message to all result view controllers
+        for (SHHashResultViewController *resultViewController in resultViewControllers)
+            [resultViewController gotPath];
 
         // we get the path and send it to the model
         NSURL *newPath = [[dialog URLs] objectAtIndex:0];
@@ -166,11 +170,6 @@ static const int resultViewVerticalIndentation = 5;
         NSSize iconSize = fileIcon.frame.size;
         NSImage *newFileIcon = [NSImage imageWithPreviewOfFileAtPath:[newPath path] ofSize:iconSize asIcon:YES];
         [fileIcon setImage:newFileIcon];
-        
-        // send gotPath message to all result view controllers
-        
-        for (SHHashResultViewController *resultViewController in resultViewControllers)
-            [resultViewController gotPath];
         
     }
     

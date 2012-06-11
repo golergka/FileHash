@@ -14,6 +14,7 @@ extern NSString * const gotResultNotification;
 @interface SHHashComputer : NSObject
 
 @property (copy) NSURL *path;
+@property (copy) NSString *result;
 @property (weak) NSOperation *operation;
 
 + (NSOperationQueue*)operationQueue;
@@ -21,7 +22,7 @@ extern NSString * const gotResultNotification;
 - (NSString*)hashType;
 - (void)gotPath:(NSURL*)newPath;
 
-// for internal use only
+// for protected use only
 
 - (NSString*)computeHash; // override it in children
 - (void)computeAndSendHash;
