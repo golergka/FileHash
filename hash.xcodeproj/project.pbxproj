@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10B3A23158522F300268830 /* SHMD5Computer.m in Sources */ = {isa = PBXBuildFile; fileRef = F10B3A22158522F300268830 /* SHMD5Computer.m */; };
 		F1A73BCD1581EAA2002A4FFB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A73BCC1581EAA2002A4FFB /* Cocoa.framework */; };
 		F1A73BD71581EAA2002A4FFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A73BD51581EAA2002A4FFB /* InfoPlist.strings */; };
 		F1A73BD91581EAA2002A4FFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A73BD81581EAA2002A4FFB /* main.m */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F10B3A21158522F300268830 /* SHMD5Computer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMD5Computer.h; sourceTree = "<group>"; };
+		F10B3A22158522F300268830 /* SHMD5Computer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMD5Computer.m; sourceTree = "<group>"; };
 		F1A73BC81581EAA2002A4FFB /* hash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A73BCC1581EAA2002A4FFB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F1A73BCF1581EAA2002A4FFB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -64,9 +67,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F10B3A251585521B00268830 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1A73C1415841E8A002A4FFB /* NSImageQuickLook */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		F1A73BBD1581EAA2002A4FFB = {
 			isa = PBXGroup;
 			children = (
+				F10B3A251585521B00268830 /* Extensions */,
 				F1A73BFA1582B3AE002A4FFB /* Controller */,
 				F1A73BF115829CC0002A4FFB /* Model */,
 				F1A73BF015829CA1002A4FFB /* View */,
@@ -87,7 +99,6 @@
 		F1A73BCB1581EAA2002A4FFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F1A73C1415841E8A002A4FFB /* NSImageQuickLook */,
 				F1A73BCC1581EAA2002A4FFB /* Cocoa.framework */,
 				F1A73BCE1581EAA2002A4FFB /* Other Frameworks */,
 			);
@@ -145,6 +156,8 @@
 				F1A73BF31582AA7D002A4FFB /* SHHashComputer.m */,
 				F1A73C1115840CE3002A4FFB /* SHHashComputerContainer.h */,
 				F1A73C1215840CE3002A4FFB /* SHHashComputerContainer.m */,
+				F10B3A21158522F300268830 /* SHMD5Computer.h */,
+				F10B3A22158522F300268830 /* SHMD5Computer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,7 +210,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SH;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "e.chugreeva@gmail.com";
 			};
 			buildConfigurationList = F1A73BC21581EAA2002A4FFB /* Build configuration list for PBXProject "hash" */;
@@ -244,6 +257,7 @@
 				F1A73BF81582B3A7002A4FFB /* SHHashResultViewController.m in Sources */,
 				F1A73C1315840CE3002A4FFB /* SHHashComputerContainer.m in Sources */,
 				F1A73C1915841E8A002A4FFB /* NSImage+QuickLook.m in Sources */,
+				F10B3A23158522F300268830 /* SHMD5Computer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +341,7 @@
 		F1A73BE71581EAA2002A4FFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hash/hash-Prefix.pch";
 				INFOPLIST_FILE = "hash/hash-Info.plist";
@@ -338,6 +353,7 @@
 		F1A73BE81581EAA2002A4FFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hash/hash-Prefix.pch";
 				INFOPLIST_FILE = "hash/hash-Info.plist";
@@ -365,6 +381,7 @@
 				F1A73BE81581EAA2002A4FFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

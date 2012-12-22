@@ -10,7 +10,7 @@
 
 @class SHHashComputerContainer;
 
-@interface SHAppDelegate : NSObject <NSApplicationDelegate> {
+@interface SHAppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate> {
     SHHashComputerContainer *computerContainer;
 }
 

@@ -10,12 +10,13 @@
 
 NSString * const gotFilePathNotification = @"gotFilePath";
 NSString * const gotResultNotification = @"gotResultOfType";
+NSString * const progressNotification = @"progressOfType";
 
 static NSOperationQueue *_operationQueue;
 
 @implementation SHHashComputer
 
-@synthesize path,operation,result;
+@synthesize path,operation,result,progress;
 
 + (NSOperationQueue*)operationQueue {
     
@@ -32,15 +33,22 @@ static NSOperationQueue *_operationQueue;
     if (self.operation)
         [self.operation cancel];
     
-    NSInvocationOperation *newOperation =
-    [[NSInvocationOperation alloc] initWithTarget:self
-                                         selector:@selector(computeAndSendHash)
-                                           object:nil];
+    NSInvocationOperation *newOperation = [NSInvocationOperation alloc];
+    newOperation = [newOperation initWithTarget:self
+                                       selector:@selector(computeAndSendHash)
+                                         object:newOperation];
     
     [[SHHashComputer operationQueue] addOperation:newOperation];
     self.operation = newOperation;
     
         
+}
+
+- (void)cancel {
+    
+    if (self.operation != nil)
+        [self.operation cancel];
+    
 }
 
 // that's where actual computation will take place in children
@@ -54,13 +62,17 @@ static NSOperationQueue *_operationQueue;
     
     self.result = [self computeHash];
     
-    NSString *notificationName = [NSString stringWithFormat:@"%@%@",
-                                  gotResultNotification,
-                                  self.hashType];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:notificationName
-                                                        object:self];
-    self.operation = nil;
+    if (![self.operation isCancelled]) {
+        
+        NSString *notificationName = [NSString stringWithFormat:@"%@%@",
+                                      gotResultNotification,
+                                      self.hashType];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:notificationName
+                                                            object:self];
+        self.operation = nil;
+        
+    }
     
 }
 

@@ -9,9 +9,9 @@
 #import <CommonCrypto/CommonDigest.h>
 
 #import "SHMD5Computer.h"
-#import "NSData+MD5.h"
 
 static const int CHUNK_SIZE = 512;
+static const double PROGRESS_INCREMENT = 0.01;
 
 @implementation SHMD5Computer
 
@@ -29,7 +29,8 @@ static const int CHUNK_SIZE = 512;
     
     NSNumber *fileSize = [fileAttributes objectForKey:NSFileSize];
     NSNumber *progressPartSize =
-    [NSNumber numberWithLongLong: (fileSize.longLongValue * 0.1)];
+    [NSNumber numberWithLongLong: (fileSize.longLongValue * PROGRESS_INCREMENT)];
+    self.progress = 0;
     
     // now we open the file itself
     
@@ -50,9 +51,13 @@ static const int CHUNK_SIZE = 512;
     BOOL done = NO;
     while(!done) {
         
-        NSData *fileData = [fileHandle readDataOfLength: CHUNK_SIZE];
-        CC_MD5_Update(&md5, [fileData bytes], [fileData length]);
-        if ( [fileData length] == 0 ) done = YES;
+        if ([self.operation isCancelled]) return nil;
+        
+        @autoreleasepool {
+            NSData *fileData = [fileHandle readDataOfLength: CHUNK_SIZE];
+            CC_MD5_Update(&md5, [fileData bytes], (int) [fileData length]);
+            if ( [fileData length] == 0 ) done = YES;   
+        }
         
         // check progress
         
@@ -60,8 +65,21 @@ static const int CHUNK_SIZE = 512;
         [NSNumber numberWithLongLong:(sizeDigested.longLongValue + CHUNK_SIZE)];
         
         if ( sizeDigested.longLongValue > progressPartSize.longLongValue ) {
-            // TODO: send out progress notification
-            NSLog(@"Progress!");
+            
+            // set progress
+            
+            self.progress += PROGRESS_INCREMENT;
+            
+            // send notification
+            
+            NSString *notificationName = [NSString stringWithFormat:@"%@%@",
+                                          progressNotification,
+                                          self.hashType];
+            [[NSNotificationCenter defaultCenter] postNotificationName:notificationName
+                                                                object:self];
+            
+            // reset progress counter
+            
             sizeDigested = [NSNumber numberWithInt:0];
         }
         

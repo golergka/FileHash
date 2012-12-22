@@ -12,6 +12,8 @@
     NSString *_hashType;
 }
 
+- (void)setHashType:(NSString*)hashType;
+
 @end
 
 @implementation SHHashResultViewController
@@ -20,6 +22,7 @@
 @synthesize textField;
 @synthesize progressIndicator;
 @synthesize label;
+@synthesize state;
 
 @synthesize result;
 
@@ -28,10 +31,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self loadView];
         
+        // overall init
+        
+        [self loadView];
+        [self.progressIndicator setUsesThreadedAnimation: YES];
+        
+        // state init
+        
+        self.state = NoFile;
         [self.progressIndicator setHidden:YES];
         [self.clipboardButton setEnabled:NO];
+
     }
     
     return self;
@@ -52,6 +63,11 @@
     [self.label setStringValue:[NSString stringWithFormat:@"%@:", hashType]];
     
     _hashType = hashType;
+    
+    // registering for notifications
+    
+    // result notification
+    
     NSString *notificationName = [NSString stringWithFormat:@"%@%@",
                                   gotResultNotification,
                                   _hashType];
@@ -60,34 +76,77 @@
                                              selector:@selector(gotResult:)
                                                  name:notificationName
                                                object:nil];
+    
+    // progress notificaion
+    
+    notificationName = [NSString stringWithFormat:@"%@%@",
+                        progressNotification,
+                        _hashType];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(progress:)
+                                                 name:notificationName
+                                               object:nil];
 }
 
 - (void)gotPath {
     
-    [self.textField setStringValue:@""];
+    self.state = InProgress;
+    [self.textField setHidden:YES];
     [self.progressIndicator startAnimation:self];
     [self.progressIndicator setHidden:NO];
-    [self.clipboardButton setEnabled:NO];
+    [self.clipboardButton setStringValue:@"Cancel"];
+    
+}
+
+SHHashComputer *getComputerFromNotification(NSNotification *notification) {
+    
+    id computer = [notification object];
+    
+    if (computer == nil) {
+        
+        [NSException raise:@"No object"
+                    format:@"Expected object with notification!"];
+        return nil;
+        
+    } else if (![computer isKindOfClass:[SHHashComputer class]]) {
+      
+        [NSException raise:@"Not SHHashComputer"
+                    format:@"Expected SHHashComputer object!"];
+        return nil;
+        
+    } else
+        return (SHHashComputer *)computer;
+}
+
+- (void)progress:(NSNotification *)progressNotification {
+    
+    SHHashComputer *computer = getComputerFromNotification(progressNotification);
+    
+    if (computer == nil)
+        return;
+    
+    [self.progressIndicator setDoubleValue:computer.progress];
     
 }
 
 - (void)gotResult:(NSNotification *)newResultNotification {
     
-    id computer = [newResultNotification object];
+    self.state = Ready;
+    
+    SHHashComputer *computer = getComputerFromNotification(newResultNotification);
     
     if (computer == nil)
-        [NSException raise:@"No object"
-                    format:@"Expected object with notification!"];
-    else if (![computer isKindOfClass:[SHHashComputer class]])
-        [NSException raise:@"Not SHHashComputer"
-                    format:@"Expected SHHashComputer object!"];
-    else
-        self.result = [((SHHashComputer*) computer) result];
+        return;
+    
+    self.result = [getComputerFromNotification(newResultNotification) result];
     
     [self.textField setStringValue:self.result];
+    [self.textField setHidden:NO];
     [self.progressIndicator stopAnimation:self];
     [self.progressIndicator setHidden:YES];
-    [self.clipboardButton setEnabled:YES];
+    [self.clipboardButton setStringValue:@"Copy"];
+//    [self.clipboardButton setEnabled:YES];
     
 }
 

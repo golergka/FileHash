@@ -98,13 +98,12 @@ static const int resultViewVerticalIndentation = 5;
     
 }
 
-- (NSString *)stringFromFileSize:(NSNumber*)size
-{
+- (NSString *)stringFromFileSize:(NSNumber*)size {
     unsigned long long theSize = size.unsignedLongLongValue;
 	float floatSize = theSize;
     
 	if (theSize<1023)
-		return([NSString stringWithFormat:@"%i bytes",theSize]);
+		return([NSString stringWithFormat:@"%lli bytes",theSize]);
 	floatSize = floatSize / 1024;
 	if (floatSize<1023)
 		return([NSString stringWithFormat:@"%1.1f KB",floatSize]);
@@ -174,4 +173,9 @@ static const int resultViewVerticalIndentation = 5;
     }
     
 }
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+    return YES;
+}
+
 @end
