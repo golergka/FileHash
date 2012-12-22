@@ -25,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF547BE1168662CC00BC3D30 /* hash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = hash.entitlements; path = hash/hash.entitlements; sourceTree = "<group>"; };
 		F10B3A21158522F300268830 /* SHMD5Computer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMD5Computer.h; sourceTree = "<group>"; };
 		F10B3A22158522F300268830 /* SHMD5Computer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMD5Computer.m; sourceTree = "<group>"; };
 		F1A73BC81581EAA2002A4FFB /* hash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hash.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +79,7 @@
 		F1A73BBD1581EAA2002A4FFB = {
 			isa = PBXGroup;
 			children = (
+				BF547BE1168662CC00BC3D30 /* hash.entitlements */,
 				F10B3A251585521B00268830 /* Extensions */,
 				F1A73BFA1582B3AE002A4FFB /* Controller */,
 				F1A73BF115829CC0002A4FFB /* Model */,
@@ -190,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1A73BE61581EAA2002A4FFB /* Build configuration list for PBXNativeTarget "hash" */;
 			buildPhases = (
+				BF547BE21686634B00BC3D30 /* ShellScript */,
 				F1A73BC41581EAA2002A4FFB /* Sources */,
 				F1A73BC51581EAA2002A4FFB /* Frameworks */,
 				F1A73BC61581EAA2002A4FFB /* Resources */,
@@ -245,6 +248,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF547BE21686634B00BC3D30 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((0x$bN))\nbN=$(($bN + 1))\nbN=$(printf \"%X\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1A73BC41581EAA2002A4FFB /* Sources */ = {
