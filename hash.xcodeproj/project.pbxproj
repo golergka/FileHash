@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF547BE51687340300BC3D30 /* SHSHA1Computer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF547BE41687340300BC3D30 /* SHSHA1Computer.m */; };
 		F10B3A23158522F300268830 /* SHMD5Computer.m in Sources */ = {isa = PBXBuildFile; fileRef = F10B3A22158522F300268830 /* SHMD5Computer.m */; };
 		F1A73BCD1581EAA2002A4FFB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A73BCC1581EAA2002A4FFB /* Cocoa.framework */; };
 		F1A73BD71581EAA2002A4FFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A73BD51581EAA2002A4FFB /* InfoPlist.strings */; };
@@ -26,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		BF547BE1168662CC00BC3D30 /* hash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = hash.entitlements; path = hash/hash.entitlements; sourceTree = "<group>"; };
+		BF547BE31687340300BC3D30 /* SHSHA1Computer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSHA1Computer.h; sourceTree = "<group>"; };
+		BF547BE41687340300BC3D30 /* SHSHA1Computer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSHA1Computer.m; sourceTree = "<group>"; };
 		F10B3A21158522F300268830 /* SHMD5Computer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMD5Computer.h; sourceTree = "<group>"; };
 		F10B3A22158522F300268830 /* SHMD5Computer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMD5Computer.m; sourceTree = "<group>"; };
 		F1A73BC81581EAA2002A4FFB /* hash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hash.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +163,8 @@
 				F1A73C1215840CE3002A4FFB /* SHHashComputerContainer.m */,
 				F10B3A21158522F300268830 /* SHMD5Computer.h */,
 				F10B3A22158522F300268830 /* SHMD5Computer.m */,
+				BF547BE31687340300BC3D30 /* SHSHA1Computer.h */,
+				BF547BE41687340300BC3D30 /* SHSHA1Computer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -188,9 +193,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F1A73BC71581EAA2002A4FFB /* hash */ = {
+		F1A73BC71581EAA2002A4FFB /* Simple File Hash */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1A73BE61581EAA2002A4FFB /* Build configuration list for PBXNativeTarget "hash" */;
+			buildConfigurationList = F1A73BE61581EAA2002A4FFB /* Build configuration list for PBXNativeTarget "Simple File Hash" */;
 			buildPhases = (
 				BF547BE21686634B00BC3D30 /* ShellScript */,
 				F1A73BC41581EAA2002A4FFB /* Sources */,
@@ -201,7 +206,7 @@
 			);
 			dependencies = (
 			);
-			name = hash;
+			name = "Simple File Hash";
 			productName = hash;
 			productReference = F1A73BC81581EAA2002A4FFB /* hash.app */;
 			productType = "com.apple.product-type.application";
@@ -228,7 +233,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F1A73BC71581EAA2002A4FFB /* hash */,
+				F1A73BC71581EAA2002A4FFB /* Simple File Hash */,
 			);
 		};
 /* End PBXProject section */
@@ -277,6 +282,7 @@
 				F1A73C1315840CE3002A4FFB /* SHHashComputerContainer.m in Sources */,
 				F1A73C1915841E8A002A4FFB /* NSImage+QuickLook.m in Sources */,
 				F10B3A23158522F300268830 /* SHMD5Computer.m in Sources */,
+				BF547BE51687340300BC3D30 /* SHSHA1Computer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +399,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F1A73BE61581EAA2002A4FFB /* Build configuration list for PBXNativeTarget "hash" */ = {
+		F1A73BE61581EAA2002A4FFB /* Build configuration list for PBXNativeTarget "Simple File Hash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1A73BE71581EAA2002A4FFB /* Debug */,

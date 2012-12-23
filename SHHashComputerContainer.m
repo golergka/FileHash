@@ -10,6 +10,7 @@
 
 #import "SHHashComputer.h"
 #import "SHMD5Computer.h"
+#import "SHSHA1Computer.h"
 
 @implementation SHHashComputerContainer
 
@@ -21,7 +22,7 @@
     if (self) {
         hashComputers = [NSMutableSet setWithCapacity:2];
 
-        [hashComputers addObject:[[SHHashComputer alloc] init]];
+        [hashComputers addObject:[[SHSHA1Computer alloc] init]];
         [hashComputers addObject:[[SHMD5Computer alloc] init]];
     }
     return self;

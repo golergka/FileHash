@@ -91,10 +91,18 @@ static const int resultViewVerticalIndentation = 5;
                                      multiplier:1
                                        constant:(resultViews*resultViewHeight)+resultViewVerticalIndentation ]];
         
+
+        
         // increasing count of created result views
         resultViews++;
         
     }
+    
+    NSLog(@"Results view bounds: %@", NSStringFromRect( self.resultsView.bounds ) );
+    
+//    NSRect bounds = self.resultsView.bounds;
+//    bounds.size.height = resultViews*(resultViewHeight + resultViewVerticalIndentation);
+//    self.resultsView.bounds = bounds;
     
 }
 
