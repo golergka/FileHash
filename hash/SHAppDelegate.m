@@ -63,7 +63,7 @@ static const int resultViewVerticalIndentation = 5;
         
         // set height to constant
         [self.resultsView addConstraint:
-         [NSLayoutConstraint constraintWithItem:newView 
+         [NSLayoutConstraint constraintWithItem:newView
                                       attribute:NSLayoutAttributeHeight
                                       relatedBy:NSLayoutRelationEqual
                                          toItem:self.resultsView
@@ -98,11 +98,11 @@ static const int resultViewVerticalIndentation = 5;
         
     }
     
-    NSLog(@"Results view bounds: %@", NSStringFromRect( self.resultsView.bounds ) );
+//    NSLog(@"Results view bounds: %@", NSStringFromRect( self.resultsView.bounds ) );
     
-//    NSRect bounds = self.resultsView.bounds;
-//    bounds.size.height = resultViews*(resultViewHeight + resultViewVerticalIndentation);
-//    self.resultsView.bounds = bounds;
+//    NSRect frame = self.resultsView.frame;
+//    frame.size.height = resultViews*(resultViewHeight + resultViewVerticalIndentation);
+//    self.resultsView.bounds = frame;
     
 }
 

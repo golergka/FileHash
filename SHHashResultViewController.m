@@ -146,7 +146,7 @@ SHHashComputer *getComputerFromNotification(NSNotification *notification) {
     [self.progressIndicator stopAnimation:self];
     [self.progressIndicator setHidden:YES];
     [self.clipboardButton setStringValue:@"Copy"];
-//    [self.clipboardButton setEnabled:YES];
+    [self.clipboardButton setEnabled:YES];
     
 }
 
