@@ -31,7 +31,7 @@
 		BF547BE41687340300BC3D30 /* SHSHA1Computer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSHA1Computer.m; sourceTree = "<group>"; };
 		F10B3A21158522F300268830 /* SHMD5Computer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMD5Computer.h; sourceTree = "<group>"; };
 		F10B3A22158522F300268830 /* SHMD5Computer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMD5Computer.m; sourceTree = "<group>"; };
-		F1A73BC81581EAA2002A4FFB /* hash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1A73BC81581EAA2002A4FFB /* hash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = hash.app; path = "Simple File Hash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A73BCC1581EAA2002A4FFB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F1A73BCF1581EAA2002A4FFB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		F1A73BD01581EAA2002A4FFB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };

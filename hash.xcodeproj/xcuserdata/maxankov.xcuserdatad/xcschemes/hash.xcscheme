@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F1A73BC71581EAA2002A4FFB"
-               BuildableName = "hash.app"
+               BuildableName = "Simple File Hash.app"
                BlueprintName = "Simple File Hash"
                ReferencedContainer = "container:hash.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1A73BC71581EAA2002A4FFB"
-            BuildableName = "hash.app"
+            BuildableName = "Simple File Hash.app"
             BlueprintName = "Simple File Hash"
             ReferencedContainer = "container:hash.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1A73BC71581EAA2002A4FFB"
-            BuildableName = "hash.app"
+            BuildableName = "Simple File Hash.app"
             BlueprintName = "Simple File Hash"
             ReferencedContainer = "container:hash.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F1A73BC71581EAA2002A4FFB"
-            BuildableName = "hash.app"
+            BuildableName = "Simple File Hash.app"
             BlueprintName = "Simple File Hash"
             ReferencedContainer = "container:hash.xcodeproj">
          </BuildableReference>
